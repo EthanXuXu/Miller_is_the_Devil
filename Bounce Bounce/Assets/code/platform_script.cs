@@ -5,6 +5,10 @@ using UnityEngine;
 public class platform_script : MonoBehaviour
 {
     public float speed = 10f;
+    private Vector3 large_size = new Vector3(4, 0.5f, 4);
+    private Vector3 normal_size = new Vector3(3, 0.5f, 3);
+    private Vector3 small_size = new Vector3(2, 0.5f, 2);
+
 
     // Start is called before the first frame update
     void Start()
