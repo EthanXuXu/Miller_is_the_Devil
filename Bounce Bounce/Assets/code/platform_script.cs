@@ -9,7 +9,7 @@ public class platform_script : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        speed = 10f;
     }
 
     // Update is called once per frame
@@ -17,24 +17,31 @@ public class platform_script : MonoBehaviour
     // Right is in the positive x axis
     void Update()
     {
-        if(Input.GetKey("up"))
+        Vector3 size = GetComponent<Renderer>().bounds.size;
+        
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -9f + (size.x/2), 9f - (size.x/2)), 
+            transform.position.y, 
+            Mathf.Clamp(transform.position.z, -9.5f + (size.z/2), 9.5f - (size.z/2)));
+
+        if(Input.GetKey("up") && transform.position.z != 9.5 - (size.z/2))
         {
             transform.Translate(new Vector3(0,0,1) * speed * Time.deltaTime);
         }
 
-        if(Input.GetKey("down"))
+        if(Input.GetKey("down") && transform.position.z != -9.5 + (size.z/2))
         {
             transform.Translate(new Vector3(0,0,-1) * speed * Time.deltaTime);
         }
 
-        if(Input.GetKey("left"))
+        if(Input.GetKey("left") && transform.position.x != -9 + (size.x/2))
         {
             transform.Translate(new Vector3(-1,0,0) * speed * Time.deltaTime);
         }
 
-        if(Input.GetKey("right"))
+        if(Input.GetKey("right") && transform.position.x != 9 - (size.z/2))
         {
             transform.Translate(new Vector3(1,0,0) * speed * Time.deltaTime);
         }
+
     }
 }
