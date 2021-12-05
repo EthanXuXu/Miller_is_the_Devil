@@ -32,13 +32,13 @@ public class platform_script : MonoBehaviour
             Mathf.Clamp(transform.position.z, -9.5f + (size.z/2), 9.5f - (size.z/2)));
         
         //Revert to normal size after 5 seconds of size change
-        if(Time.time - size_change_time >= 5f){
+        if(Time.time - size_change_time >= 7f){
             turn_normal();
         }
 
         //Revert to normal speed after 5 seconds of speed change
-        if(Time.time - size_change_time >= 5f){
-            turn_normal();
+        if(Time.time - size_change_time >= 4f){
+            normal_speed();
         }
 
         if(Input.GetKey("up") && transform.position.z < 9.45 - (size.z/2))

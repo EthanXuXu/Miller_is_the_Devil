@@ -17,7 +17,10 @@ public class grow_script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //If the grow power up falls 2 meters below the platform its destroyed
+        if(transform.position.y <= -2){
+            Destroy(gameObject);
+        }
     }
     
     void OnCollisionEnter(Collision collision)
