@@ -27,22 +27,25 @@ public class platform_script : MonoBehaviour
             transform.position.y, 
             Mathf.Clamp(transform.position.z, -9.5f + (size.z/2), 9.5f - (size.z/2)));
 
-        if(Input.GetKey("up") && transform.position.z != 9.5 - (size.z/2))
+        Debug.Log("Size " + size);
+        Debug.Log("Z position " + transform.position.z);
+        Debug.Log("9.5 - (size.z/2) = " + (9.5 - size.z/2));
+        if(Input.GetKey("up") && transform.position.z < 9.45 - (size.z/2))
         {
             transform.Translate(new Vector3(0,0,1) * speed * Time.deltaTime);
         }
 
-        if(Input.GetKey("down") && transform.position.z != -9.5 + (size.z/2))
+        if(Input.GetKey("down") && transform.position.z > -9.45 + (size.z/2))
         {
             transform.Translate(new Vector3(0,0,-1) * speed * Time.deltaTime);
         }
 
-        if(Input.GetKey("left") && transform.position.x != -9 + (size.x/2))
+        if(Input.GetKey("left") && transform.position.x > -8.95 + (size.x/2))
         {
             transform.Translate(new Vector3(-1,0,0) * speed * Time.deltaTime);
         }
 
-        if(Input.GetKey("right") && transform.position.x != 9 - (size.z/2))
+        if(Input.GetKey("right") && transform.position.x < 8.95 - (size.z/2))
         {
             transform.Translate(new Vector3(1,0,0) * speed * Time.deltaTime);
         }
