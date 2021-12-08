@@ -24,7 +24,7 @@ public class game_manager : MonoBehaviour
     void Update()
     {
         if(lives == 0){
-            Application.quit();
+            Application.Quit();
         }
         Debug.Log("Score " + score);
     }
