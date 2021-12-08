@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - platform_small
+  - game_manager
   layers:
   - Default
   - TransparentFX

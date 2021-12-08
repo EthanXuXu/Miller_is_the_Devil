@@ -8,9 +8,12 @@ public class platform_script : MonoBehaviour
 
     private static float size_change_time;
     private static float speed_change_time;
-    private Vector3 large_size = new Vector3(4, 0.5f, 4);
-    private Vector3 normal_size = new Vector3(3, 0.5f, 3);
-    private Vector3 small_size = new Vector3(2, 0.5f, 2);
+    private static float bomb_change_time;
+    private static bool disabled;
+
+    private Vector3 large_size = new Vector3(4, 3, 4);
+    private Vector3 normal_size = new Vector3(3, 3, 3);
+    private Vector3 small_size = new Vector3(2, 3, 2);
 
 
     // Start is called before the first frame update
@@ -18,6 +21,9 @@ public class platform_script : MonoBehaviour
     {
         speed = 10f;
         size_change_time = 0f;
+        speed_change_time = 0f;
+        bomb_change_time = 0f;
+        disabled = false;
     }
 
     // Update is called once per frame
@@ -31,36 +37,43 @@ public class platform_script : MonoBehaviour
             transform.position.y, 
             Mathf.Clamp(transform.position.z, -9.5f + (size.z/2), 9.5f - (size.z/2)));
         
-        //Revert to normal size after 5 seconds of size change
+        //Revert to normal size after 7 seconds of size change
         if(Time.time - size_change_time >= 7f){
             turn_normal();
         }
 
-        //Revert to normal speed after 5 seconds of speed change
-        if(Time.time - size_change_time >= 4f){
+        //Revert to normal speed after 7 seconds of speed change
+        if(Time.time - speed_change_time >= 7f){
             normal_speed();
         }
 
-        if(Input.GetKey("up") && transform.position.z < 9.45 - (size.z/2))
-        {
-            speed_up();
-            transform.Translate(new Vector3(0,0,1) * speed * Time.deltaTime);
+        //Revert to normal speed after 5 seconds of being disabled
+        if(Time.time - bomb_change_time >= 3f){
+            disabled = false;
         }
 
-        if(Input.GetKey("down") && transform.position.z > -9.45 + (size.z/2))
+        if(!disabled)
         {
-           
-            transform.Translate(new Vector3(0,0,-1) * speed * Time.deltaTime);
-        }
+            if(Input.GetKey("up") && transform.position.z < 9.45 - (size.z/2))
+            {
+                transform.Translate(new Vector3(0,0,1) * speed * Time.deltaTime);
+            }
 
-        if(Input.GetKey("left") && transform.position.x > -8.95 + (size.x/2))
-        {
-            transform.Translate(new Vector3(-1,0,0) * speed * Time.deltaTime);
-        }
+            if(Input.GetKey("down") && transform.position.z > -9.45 + (size.z/2))
+            {
+            
+                transform.Translate(new Vector3(0,0,-1) * speed * Time.deltaTime);
+            }
 
-        if(Input.GetKey("right") && transform.position.x < 8.95 - (size.z/2))
-        {
-            transform.Translate(new Vector3(1,0,0) * speed * Time.deltaTime);
+            if(Input.GetKey("left") && transform.position.x > -8.95 + (size.x/2))
+            {
+                transform.Translate(new Vector3(-1,0,0) * speed * Time.deltaTime);
+            }
+
+            if(Input.GetKey("right") && transform.position.x < 8.95 - (size.z/2))
+            {
+                transform.Translate(new Vector3(1,0,0) * speed * Time.deltaTime);
+            }
         }
 
     }
@@ -86,5 +99,10 @@ public class platform_script : MonoBehaviour
 
     public void normal_speed(){
         speed = 10f;
+    }
+
+    public void disable_platform(){
+        bomb_change_time = Time.time;
+        disabled = true;
     }
 }
