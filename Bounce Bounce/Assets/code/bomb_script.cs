@@ -7,6 +7,8 @@ public class bomb_script : MonoBehaviour
     private GameObject platform;
     private platform_script plat_script;
 
+    public GameObject explosion_prefab;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +29,7 @@ public class bomb_script : MonoBehaviour
     {
         if(collision.gameObject.tag == "platform_small")
         {
+            Instantiate(explosion_prefab, transform.position, Quaternion.identity);
             plat_script.disable_platform();
             Destroy(gameObject);
         }

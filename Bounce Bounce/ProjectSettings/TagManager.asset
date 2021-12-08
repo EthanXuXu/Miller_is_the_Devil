@@ -6,6 +6,7 @@ TagManager:
   tags:
   - platform_small
   - game_manager
+  - bomb
   layers:
   - Default
   - TransparentFX

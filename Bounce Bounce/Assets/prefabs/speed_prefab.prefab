@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -328463965209156739}
   - component: {fileID: 368402665042805976}
   m_Layer: 0
-  m_Name: speed prefab
+  m_Name: speed_prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

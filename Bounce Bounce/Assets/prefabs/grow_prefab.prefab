@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: 509344016727817293}
   - component: {fileID: 6585442091170422652}
   m_Layer: 0
-  m_Name: Grow prefab
+  m_Name: grow_prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
