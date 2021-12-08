@@ -21,6 +21,12 @@ public class ball_script : MonoBehaviour
     {
         speed = manager_script.get_ball_speed();
         transform.Translate(new Vector3(0,-1,0) * speed * Time.deltaTime);
+
+        //If the balls falls 2 meters below the platform its destroyed and number of lives decreased
+        if(transform.position.y <= -2){
+            manager_script.decrease_lives();
+            Destroy(gameObject);
+        }
     }
 
     void OnCollisionEnter(Collision collision)
