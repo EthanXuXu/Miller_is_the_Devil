@@ -42,6 +42,8 @@ public class bomb_script : MonoBehaviour
         {
             Instantiate(explosion_prefab, transform.position, Quaternion.identity);
             plat_script.disable_platform();
+
+            FindObjectOfType<AudioManager>().Play("Explode");
             Destroy(gameObject);
         }
     }

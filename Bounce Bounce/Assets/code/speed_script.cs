@@ -39,6 +39,7 @@ public class speed_script : MonoBehaviour
         if(collision.gameObject.tag == "platform_small")
         {
             plat_script.speed_up();
+            FindObjectOfType<AudioManager>().Play("Collide");
             Destroy(gameObject);
         }
     }
