@@ -28,6 +28,7 @@ public class grow_script : MonoBehaviour
         if(collision.gameObject.tag == "platform_small")
         {
             plat_script.turn_large();
+            FindObjectOfType<AudioManager>().Play("Collide");
             Destroy(gameObject);
         }
     }

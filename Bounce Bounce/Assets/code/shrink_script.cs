@@ -29,6 +29,7 @@ public class shrink_script : MonoBehaviour
         if(collision.gameObject.tag == "platform_small")
         {
             plat_script.turn_small();
+            FindObjectOfType<AudioManager>().Play("Collide");
             Destroy(gameObject);
         }
     }
