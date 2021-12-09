@@ -2400,6 +2400,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bf8e4424f53b4aec8addbbb7f20422a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ball_prefab: {fileID: 5889880565221069157, guid: ebeff3dd0a51642e4a8dd82827ecb25f, type: 3}
+  shrink_prefab: {fileID: 1787539537070263629, guid: 2bd71579fe8b94e04981f1f0f0348081, type: 3}
+  grow_prefab: {fileID: 3486486659986513560, guid: 6d948ab52bbcc4466a97f55f958a17e4, type: 3}
+  bomb_prefab: {fileID: 1790030397752994593, guid: 53dbaf97a845b4191b36d17696259c5b, type: 3}
+  speed_prefab: {fileID: 2525799225604410208, guid: 7ff838a40c3ea42f08181350c67b1cd9, type: 3}
 --- !u!4 &1817057773
 Transform:
   m_ObjectHideFlags: 0
