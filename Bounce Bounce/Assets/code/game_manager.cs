@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class game_manager : MonoBehaviour
 {
@@ -28,11 +31,16 @@ public class game_manager : MonoBehaviour
     public GameObject bomb_prefab;
     public GameObject speed_prefab;
 
-
+    //Variables for the UI
+    public GameObject endMenuUI;
+    public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI lifeText;
+    public TextMeshProUGUI endScoreText;
 
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1f;
         lives = 10;
         score = 0;
         ball_speed = 3f;
@@ -45,12 +53,20 @@ public class game_manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Shows the Game Over menu, and allow the user to either quit or restart
         if(lives == 0){
-            Application.Quit();
-        }
-        Debug.Log("Score " + score);
 
-        if(Time.time - prev_time >= time_diff){
+            endMenuUI.SetActive(true);
+            scoreText.enabled = false;
+            lifeText.enabled = false;
+            Time.timeScale = 0f;
+            endScoreText.text = "SCORE: " + score.ToString();
+        }
+
+        scoreText.text = "Score: " + score.ToString();
+        lifeText.text = "Life: " + lives.ToString();
+
+        if (Time.time - prev_time >= time_diff){
             //One in ten chance of spawning a powerup
             if(Random.Range(1, 10) == 1) {
                 spawn_powerup(Random.Range(1,5));
@@ -108,5 +124,28 @@ public class game_manager : MonoBehaviour
 
     public float get_powerup_speed(){
         return powerup_speed;
+    }
+
+
+    //restarts the game
+    public void RestartGame()
+    {
+     
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        
+    }
+
+    //quits the game
+    public void QuitGame()
+    {
+
+#if UNITY_EDITOR
+            // Application.Quit() does not work in the editor so
+            // UnityEditor.EditorApplication.isPlaying need to be set to false to end the game
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+
     }
 }

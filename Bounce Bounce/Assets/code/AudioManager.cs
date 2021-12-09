@@ -12,7 +12,7 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-
+        //when we load into another scene, this ensures that there is only one AudioManager
         if(instance == null)
         {
             instance = this;
@@ -24,8 +24,10 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
+        //doesn't reset the music when loading into a new scene
         DontDestroyOnLoad(gameObject);
 
+        //set up the audio
         foreach(Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();

@@ -1,6 +1,7 @@
 using UnityEngine.Audio;
 using UnityEngine;
 
+//Sound class, allows us to add audio to the game
 [System.Serializable]
 public class Sound
 {

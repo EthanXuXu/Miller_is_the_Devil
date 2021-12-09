@@ -1734,8 +1734,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Use the arrow keys to navigate the platform to catch the falling balls.
     The more balls you catch, the more points you will get and the harder it gets.
-    But do not worry as you will have 3 lives. There will also be power ups that
-    will enlarge, shrink, accelerate, and even explode the plateform!!
+    But do not worry as you will have 10 lives. There will also be power ups that
+    will enlarge, shrink, accelerate, and even explode the platform!!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
