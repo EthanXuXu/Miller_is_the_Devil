@@ -3318,7 +3318,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 700460133030179257, guid: ca8cea6927b6ad140ae0c926f0b65745, type: 3}
       propertyPath: sounds.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 700460133030179257, guid: ca8cea6927b6ad140ae0c926f0b65745, type: 3}
       propertyPath: sounds.Array.data[1].clip
@@ -3345,6 +3345,14 @@ PrefabInstance:
       value: Collide
       objectReference: {fileID: 0}
     - target: {fileID: 700460133030179257, guid: ca8cea6927b6ad140ae0c926f0b65745, type: 3}
+      propertyPath: sounds.Array.data[3].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 33ab3452c3e2d43d1974e39120875124, type: 3}
+    - target: {fileID: 700460133030179257, guid: ca8cea6927b6ad140ae0c926f0b65745, type: 3}
+      propertyPath: sounds.Array.data[3].name
+      value: Ball
+      objectReference: {fileID: 0}
+    - target: {fileID: 700460133030179257, guid: ca8cea6927b6ad140ae0c926f0b65745, type: 3}
       propertyPath: sounds.Array.data[0].group
       value: 
       objectReference: {fileID: 24300002, guid: 25f681d9f0d383d4dbf6bdc3b96f293b, type: 2}
@@ -3365,6 +3373,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 700460133030179257, guid: ca8cea6927b6ad140ae0c926f0b65745, type: 3}
+      propertyPath: sounds.Array.data[3].group
+      value: 
+      objectReference: {fileID: 24300002, guid: 25f681d9f0d383d4dbf6bdc3b96f293b, type: 2}
+    - target: {fileID: 700460133030179257, guid: ca8cea6927b6ad140ae0c926f0b65745, type: 3}
+      propertyPath: sounds.Array.data[3].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 700460133030179257, guid: ca8cea6927b6ad140ae0c926f0b65745, type: 3}
       propertyPath: sounds.Array.data[0].volume
       value: 0.27
       objectReference: {fileID: 0}
@@ -3374,6 +3390,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 700460133030179257, guid: ca8cea6927b6ad140ae0c926f0b65745, type: 3}
       propertyPath: sounds.Array.data[2].volume
+      value: 0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 700460133030179257, guid: ca8cea6927b6ad140ae0c926f0b65745, type: 3}
+      propertyPath: sounds.Array.data[3].volume
       value: 0.34
       objectReference: {fileID: 0}
     m_RemovedComponents: []
