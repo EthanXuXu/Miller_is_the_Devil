@@ -3777,9 +3777,17 @@ PrefabInstance:
     - target: {fileID: 700460133030179257, guid: ca8cea6927b6ad140ae0c926f0b65745, type: 3}
       propertyPath: sounds.Array.data[3].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 7eb6643af90487c459dfa3b697248842, type: 3}
+      objectReference: {fileID: 8300000, guid: 33ab3452c3e2d43d1974e39120875124, type: 3}
     - target: {fileID: 700460133030179257, guid: ca8cea6927b6ad140ae0c926f0b65745, type: 3}
       propertyPath: sounds.Array.data[3].name
+      value: Ball
+      objectReference: {fileID: 0}
+    - target: {fileID: 700460133030179257, guid: ca8cea6927b6ad140ae0c926f0b65745, type: 3}
+      propertyPath: sounds.Array.data[4].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7eb6643af90487c459dfa3b697248842, type: 3}
+    - target: {fileID: 700460133030179257, guid: ca8cea6927b6ad140ae0c926f0b65745, type: 3}
+      propertyPath: sounds.Array.data[4].name
       value: Collide
       objectReference: {fileID: 0}
     - target: {fileID: 700460133030179257, guid: ca8cea6927b6ad140ae0c926f0b65745, type: 3}
@@ -3811,6 +3819,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 700460133030179257, guid: ca8cea6927b6ad140ae0c926f0b65745, type: 3}
+      propertyPath: sounds.Array.data[4].group
+      value: 
+      objectReference: {fileID: 24300002, guid: 25f681d9f0d383d4dbf6bdc3b96f293b, type: 2}
+    - target: {fileID: 700460133030179257, guid: ca8cea6927b6ad140ae0c926f0b65745, type: 3}
+      propertyPath: sounds.Array.data[4].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 700460133030179257, guid: ca8cea6927b6ad140ae0c926f0b65745, type: 3}
       propertyPath: sounds.Array.data[0].volume
       value: 0.27
       objectReference: {fileID: 0}
@@ -3824,6 +3840,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 700460133030179257, guid: ca8cea6927b6ad140ae0c926f0b65745, type: 3}
       propertyPath: sounds.Array.data[3].volume
+      value: 0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 700460133030179257, guid: ca8cea6927b6ad140ae0c926f0b65745, type: 3}
+      propertyPath: sounds.Array.data[4].volume
       value: 0.34
       objectReference: {fileID: 0}
     m_RemovedComponents: []

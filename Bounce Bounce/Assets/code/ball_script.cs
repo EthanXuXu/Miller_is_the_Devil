@@ -38,7 +38,7 @@ public class ball_script : MonoBehaviour
         if(collision.gameObject.tag == "platform_small")
         {
             manager_script.increase_score();
-            FindObjectOfType<AudioManager>().Play("ball");
+            FindObjectOfType<AudioManager>().Play("Ball");
             Destroy(gameObject);
         }
     }
