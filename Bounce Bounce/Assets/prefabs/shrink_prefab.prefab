@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1671141916801563764}
   - component: {fileID: 1671141916801563767}
   - component: {fileID: -4986662998283548895}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: shrink_prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}

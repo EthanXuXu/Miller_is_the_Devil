@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 509344016995570801}
   - component: {fileID: 509344016995570798}
   - component: {fileID: 509344016995570799}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Side
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 509344017157372783}
   - component: {fileID: 509344017157372780}
   - component: {fileID: 509344017157372781}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 509344016727817292}
   - component: {fileID: 509344016727817293}
   - component: {fileID: 6585442091170422652}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: grow_prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -252,7 +252,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 2.5, y: 2.5, z: 1.2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6585442091170422652
 MonoBehaviour:

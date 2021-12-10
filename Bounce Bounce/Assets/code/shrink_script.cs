@@ -26,9 +26,9 @@ public class shrink_script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        speed = manager_script.get_powerup_speed();
+        speed = manager_script.get_ball_speed();
         transform.Translate(new Vector3(0,-1,0) * speed * Time.deltaTime);
-        
+
         //If the shrink power up falls 2 meters below the platform its destroyed
         if(transform.position.y <= -2){
             Destroy(gameObject);
@@ -37,6 +37,10 @@ public class shrink_script : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        if(collision.gameObject.layer == 6){
+            Physics.IgnoreCollision(collision.collider, GetComponent<Collider>());
+        }
+
         if(collision.gameObject.tag == "platform_small")
         {
             plat_script.turn_small();

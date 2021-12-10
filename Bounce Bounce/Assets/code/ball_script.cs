@@ -31,6 +31,10 @@ public class ball_script : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        if(collision.gameObject.layer == 6){
+            Physics.IgnoreCollision(collision.collider, GetComponent<Collider>());
+        }
+        
         if(collision.gameObject.tag == "platform_small")
         {
             manager_script.increase_score();

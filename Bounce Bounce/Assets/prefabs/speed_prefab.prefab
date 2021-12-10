@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 6060429774377865043}
   - component: {fileID: -328463965209156739}
   - component: {fileID: 368402665042805976}
-  m_Layer: 0
+  - component: {fileID: 6583174798935768461}
+  m_Layer: 6
   m_Name: speed_prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2525799225604410208}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8, y: 5, z: 0}
+  m_LocalPosition: {x: -9.06, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8904811163412640475}
@@ -63,6 +64,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &6583174798935768461
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2525799225604410208}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 1.5, z: 1.5}
+  m_Center: {x: 1, y: 0, z: 0}
 --- !u!1 &8904811162409502901
 GameObject:
   m_ObjectHideFlags: 0
@@ -72,7 +86,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8904811162409502898}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Arrow Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +121,7 @@ GameObject:
   - component: {fileID: 8904811162709486154}
   - component: {fileID: 8904811162709486157}
   - component: {fileID: 8904811162709486156}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,7 +216,7 @@ GameObject:
   - component: {fileID: 8904811162947412290}
   - component: {fileID: 8904811162947412293}
   - component: {fileID: 8904811162947412292}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,7 +311,7 @@ GameObject:
   - component: {fileID: 8904811163194703276}
   - component: {fileID: 8904811163194703279}
   - component: {fileID: 8904811163194703278}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -389,7 +403,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8904811163412640475}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Arrow Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -424,7 +438,7 @@ GameObject:
   - component: {fileID: 8904811163711048703}
   - component: {fileID: 8904811163711048702}
   - component: {fileID: 8904811163711048689}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -516,7 +530,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8904811163793680099}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Arrow Middle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -551,7 +565,7 @@ GameObject:
   - component: {fileID: 8904811163880500879}
   - component: {fileID: 8904811163880500878}
   - component: {fileID: 8904811163880500865}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -646,7 +660,7 @@ GameObject:
   - component: {fileID: 8904811163984809565}
   - component: {fileID: 8904811163984809564}
   - component: {fileID: 8904811163984809567}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}

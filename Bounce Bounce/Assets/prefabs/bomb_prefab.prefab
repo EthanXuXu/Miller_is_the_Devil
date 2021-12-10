@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 6658922491408818303}
   - component: {fileID: 2674922786843663633}
   - component: {fileID: 3932029174290773610}
-  m_Layer: 0
+  - component: {fileID: 2502451236822836707}
+  m_Layer: 6
   m_Name: bomb_prefab
   m_TagString: bomb
   m_Icon: {fileID: 0}
@@ -64,6 +65,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion_prefab: {fileID: 729312149679569996, guid: 0521981685b5541819148beee2672396, type: 3}
+--- !u!65 &2502451236822836707
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790030397752994593}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.5, z: 1}
+  m_Center: {x: 0, y: 0.36, z: 0}
 --- !u!1 &2247295952701087533
 GameObject:
   m_ObjectHideFlags: 0
@@ -76,7 +90,7 @@ GameObject:
   - component: {fileID: 5527349087396735673}
   - component: {fileID: 917910392508547608}
   - component: {fileID: 7311642582787021636}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +185,7 @@ GameObject:
   - component: {fileID: 1679912793874905430}
   - component: {fileID: 6827117548966164264}
   - component: {fileID: 3408778139759649694}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -267,7 +281,7 @@ GameObject:
   - component: {fileID: 8380508297339227200}
   - component: {fileID: 5880924226818069150}
   - component: {fileID: 1941160941407846597}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fuse
   m_TagString: Untagged
   m_Icon: {fileID: 0}

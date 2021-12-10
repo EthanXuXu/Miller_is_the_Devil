@@ -13,8 +13,8 @@ public class game_manager : MonoBehaviour
     private float ball_spawn_time; 
     private static int score;
     private float ball_speed; 
-    private float powerup_speed;
     private static int lives;
+    private float ball_speed_prev_time;
 
     //Variables for spawning new balls
     private Vector3 prev_position;
@@ -43,10 +43,10 @@ public class game_manager : MonoBehaviour
         Time.timeScale = 1f;
         lives = 10;
         score = 0;
-        ball_speed = 3f;
-        powerup_speed = 2f;
+        ball_speed = 2.5f;
         prev_position = new Vector3(0, 9, 0);
         prev_time = 0f;
+        ball_speed_prev_time = 0;
         calc_new_ball_pos();
     }
 
@@ -64,12 +64,21 @@ public class game_manager : MonoBehaviour
         }
 
         scoreText.text = "Score: " + score.ToString();
-        lifeText.text = "Life: " + lives.ToString();
+        lifeText.text = "Lives: " + lives.ToString();
+        
+        //Every 30 seconds increase ball speed
+        if(Time.time - ball_speed_prev_time  >= 30){
+            increase_ball_speed();
+            ball_speed_prev_time = Time.time;
+        }
 
         if (Time.time - prev_time >= time_diff){
             //One in ten chance of spawning a powerup
+            int powerup_int = Random.Range(1,11);
             if(Random.Range(1, 10) == 1) {
-                spawn_powerup(Random.Range(1,5));
+                spawn_good_powerup(Random.Range(1,3));
+            } else if (powerup_int >= 8) {
+                spawn_bad_powerup(Random.Range(1,3));
             } else {
                 Instantiate(ball_prefab, new_position, Quaternion.identity);
             }
@@ -86,19 +95,32 @@ public class game_manager : MonoBehaviour
         prev_position = new_position;
     }
 
-    public void spawn_powerup(int powerup_num){
+    public void spawn_good_powerup(int powerup_num){
         if(powerup_num == 1)
         {
             Instantiate(grow_prefab, new_position, Quaternion.identity);
-        } else if (powerup_num == 2) 
+        } else
         {
-            Instantiate(shrink_prefab, new_position, Quaternion.identity);
-        } else if (powerup_num == 3) 
+            Instantiate(speed_prefab, new_position, Quaternion.identity);
+        }
+    }
+
+    public void spawn_bad_powerup(int powerup_num){
+        if(powerup_num == 1)
         {
             Instantiate(bomb_prefab, new_position, Quaternion.identity);
         } else
         {
-            Instantiate(speed_prefab, new_position, Quaternion.identity);
+            Instantiate(shrink_prefab, new_position, Quaternion.identity);
+        }
+    }
+
+    public int random_negation(){
+        float negation = Random.Range(-1, 1);
+        if (negation <= 0) {
+            return -1;
+        } else {
+            return 1;
         }
     }
 
@@ -115,17 +137,27 @@ public class game_manager : MonoBehaviour
     }
 
     public void increase_ball_speed(){
+        if(ball_speed == 2.5f)
+        {
+            ball_speed = 3.5f;
+        }  
+          else if(ball_speed == 3.5)
+        {
+            ball_speed = 5f;
+        } else if (ball_speed == 5)
+        {
+            ball_speed = 6f;
+        } else if (ball_speed == 6){
+            ball_speed = 7f;
+        } else if (ball_speed == 7){
+            ball_speed = 8f;
+        } 
         return;
     }
 
     public void decrease_lives(){
         lives -= 1;
     }
-
-    public float get_powerup_speed(){
-        return powerup_speed;
-    }
-
 
     //restarts the game
     public void RestartGame()
