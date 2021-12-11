@@ -7,14 +7,13 @@ using TMPro;
 
 public class game_manager : MonoBehaviour
 {
-    // (float, float) x_coords = (-7f, 7f);
-    // (float, float) z_coords = (-8f, 8f);
 
     private float ball_spawn_time; 
     private static int score;
     private float ball_speed; 
     private static int lives;
     private float ball_speed_prev_time;
+    private int bad_powerup_chances;
 
     //Variables for spawning new balls
     private Vector3 prev_position;
@@ -47,6 +46,8 @@ public class game_manager : MonoBehaviour
         prev_position = new Vector3(0, 9, 0);
         prev_time = 0f;
         ball_speed_prev_time = 0;
+        bad_powerup_chances = 9;
+        Physics.IgnoreLayerCollision(6,6);
         calc_new_ball_pos();
     }
 
@@ -73,13 +74,17 @@ public class game_manager : MonoBehaviour
         }
 
         if (Time.time - prev_time >= time_diff){
-            //One in ten chance of spawning a powerup
+            //One in ten chance of spawning a good powerup
             int powerup_int = Random.Range(1,11);
             if(Random.Range(1, 10) == 1) {
                 spawn_good_powerup(Random.Range(1,3));
-            } else if (powerup_int >= 8) {
+            } 
+            //Dynamic chance of spawning a bad powerup
+            else if (powerup_int >= bad_powerup_chances) {
                 spawn_bad_powerup(Random.Range(1,3));
-            } else {
+            } 
+            //seven in ten chance of spawing a ball
+            else {
                 Instantiate(ball_prefab, new_position, Quaternion.identity);
             }
             prev_time = Time.time;
@@ -87,6 +92,11 @@ public class game_manager : MonoBehaviour
         }
     }
 
+    /*
+    Generates a random x and z coordinates for a new ball / powerup within a certain area
+    calculates the time required for the platfrom to move from the previous ball's position
+    to the new ball's position, and adds a 200 milisecond offset
+    */
     public void calc_new_ball_pos(){
         xPos = Random.Range(-7, 7);
         zPos = Random.Range(-8, 8);
@@ -95,6 +105,9 @@ public class game_manager : MonoBehaviour
         prev_position = new_position;
     }
 
+    /*
+    Spawns a grow or a speed powerup
+    */
     public void spawn_good_powerup(int powerup_num){
         if(powerup_num == 1)
         {
@@ -105,6 +118,9 @@ public class game_manager : MonoBehaviour
         }
     }
 
+    /*
+    Spawns a shrink or a bomb powerup
+    */
     public void spawn_bad_powerup(int powerup_num){
         if(powerup_num == 1)
         {
@@ -112,15 +128,6 @@ public class game_manager : MonoBehaviour
         } else
         {
             Instantiate(shrink_prefab, new_position, Quaternion.identity);
-        }
-    }
-
-    public int random_negation(){
-        float negation = Random.Range(-1, 1);
-        if (negation <= 0) {
-            return -1;
-        } else {
-            return 1;
         }
     }
 
@@ -146,6 +153,7 @@ public class game_manager : MonoBehaviour
             ball_speed = 5f;
         } else if (ball_speed == 5)
         {
+            bad_powerup_chances = 8;
             ball_speed = 6f;
         } else if (ball_speed == 6){
             ball_speed = 7f;

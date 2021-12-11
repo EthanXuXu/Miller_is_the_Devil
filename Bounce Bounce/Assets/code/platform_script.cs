@@ -78,29 +78,50 @@ public class platform_script : MonoBehaviour
 
     }
 
+    /*
+    When a shrink powerup hits the platform scale down the object
+    by 33% on the x and z axes
+    */
     public void turn_small(){
         size_change_time = Time.time;
         transform.localScale = small_size;
     }
 
+    /*
+    Return platform to normal size
+    */
     public void turn_normal(){
         transform.localScale = normal_size;
     }
     
+    /*
+    When a grow powerup hits the platform scale up the object
+    by 33% on the x and z axes
+    */
     public void turn_large(){
         size_change_time = Time.time;
         transform.localScale = large_size;
     }
 
+    /*
+    When a speed powerup hits the platform increase movement
+    speed by 50%
+    */
     public void speed_up(){
         speed_change_time = Time.time;
         speed = 15f;
     }
 
+    /*
+    Return to normal speed
+    */
     public void normal_speed(){
         speed = 10f;
     }
 
+    /*
+    When a bomb hits the platform disable movement
+    */
     public void disable_platform(){
         bomb_change_time = Time.time;
         disabled = true;
